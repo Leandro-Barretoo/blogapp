@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @user = User.find_by_id(params[:user_id])
     @post = Post.new
   end
-  
+
   def create
     @post = Post.create(author_id: params[:user_id], title: params[:title], text: params[:text])
     if @post.save
